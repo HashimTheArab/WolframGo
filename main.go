@@ -7,13 +7,13 @@ import (
   "net/http"
 )
 
-var appid string
+var Appid string
 
 func GetSimpleResult(question string) (string, error) {
 
   args := strings.Split(question, " ")
   question = strings.Join(args, "+")
-  link := fmt.Sprintf("http://api.wolframalpha.com/v2/result?appid=%s&output=json&input=%s", appid, question)
+  link := fmt.Sprintf("http://api.wolframalpha.com/v2/result?appid=%s&output=json&input=%s", Appid, question)
 
   res, err := http.Get(link)
 
