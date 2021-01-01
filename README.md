@@ -12,9 +12,9 @@ import (
 )
 
 func main() {
-  wolframgo.appid = "your app id"
+  wolframgo.SetAppId("Your App ID")
   
-  res, err := wolframgo.GetSimpleResult("how many calories are in cereal")
+  res, err := wolframgo.GetSimpleResult("How many calories are in cereal?")
   
   if err != nil {
     panic(err)
