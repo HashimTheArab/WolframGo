@@ -31,9 +31,9 @@ package main
 import (
 	"github.com/Jviguy/SpeedyCmds/command/ctx"
 	"github.com/bwmarrin/discordgo"
-  "github.com/prim69/wolframgo"
+        "github.com/prim69/wolframgo"
 	"strings"
-  "fmt"
+        "fmt"
 )
 
 type Ask struct {
