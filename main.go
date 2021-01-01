@@ -9,6 +9,10 @@ import (
 
 var Appid string
 
+func SetAppId(id string) {
+  Appid = id
+}
+
 func GetSimpleResult(question string) (string, error) {
 
   args := strings.Split(question, " ")
