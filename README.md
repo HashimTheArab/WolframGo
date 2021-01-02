@@ -37,19 +37,7 @@ import (
 )
 
 type Ask struct {
-	name string
-}
-
-func (p Ask) Setname(newname string) {
-	p.name = newname
-}
-
-func (p Ask) GetName() string {
-	return p.name
-}
-
-func (p Ask) SetName(newname string) {
-	p.name = newname
+	
 }
 
 func (p Ask) Execute(ctx ctx.Ctx, session *discordgo.Session) error {
