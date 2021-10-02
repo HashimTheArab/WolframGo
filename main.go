@@ -2,7 +2,6 @@ package wolframgo
 
 import (
 	"encoding/json"
-	"fmt"
 	"io/ioutil"
 	"net/http"
 	"strings"
@@ -50,7 +49,6 @@ func GetComplexResult(question string) (*ComplexResult, error) {
 	if err != nil {
 		return nil, err
 	}
-	fmt.Println(string(result))
 
 	a := baseResult{}
 
