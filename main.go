@@ -15,15 +15,14 @@ func SetAppId(id string) {
 
 func GetSimpleResult(question string) (string, error) {
 	link := "http://api.wolframalpha.com/v2/result?appid=" + AppID + "&output=json&input=" + strings.ReplaceAll(question, " ", "+")
-
+	
 	res, err := http.Get(link)
+	defer res.Body.Close()
 
 	if err != nil {
 		return "", err
 	}
-
-	defer res.Body.Close()
-
+	
 	result, err := ioutil.ReadAll(res.Body)
 
 	if err != nil {
@@ -37,12 +36,11 @@ func GetComplexResult(question string) (*ComplexResult, error) {
 	link := "http://api.wolframalpha.com/v2/query?appid=" + AppID + "&includepodid=Result&output=json&input=" + strings.ReplaceAll(question, " ", "+")
 
 	res, err := http.Get(link)
+	defer res.Body.Close()
 
 	if err != nil {
 		return nil, err
 	}
-
-	defer res.Body.Close()
 
 	result, err := ioutil.ReadAll(res.Body)
 
